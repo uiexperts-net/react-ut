@@ -1,5 +1,4 @@
-name: Run Tests
-
+name: Run Tests with Coverage
 on:
   pull_request:
     branches:
@@ -23,3 +22,9 @@ jobs:
 
       - name: Run Jest tests
         run: npm test
+    
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ArtiomTr/jest-coverage-report-action@v2        
