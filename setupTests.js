@@ -1,5 +1,5 @@
 /**
- * setupTests.js
+ * setupTests.js -
  * Helps to setup global configurations for the test cases
  */
 
