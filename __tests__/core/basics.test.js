@@ -2,7 +2,7 @@
 import getValues, {addValues,subtractValues} from '../../src/core/basics'
 
 describe('Basics of Javascript', () => {    
-    test('check addValues method returns addition of a+b', () => {
+    test('check addValues method returns addition of a+b values', () => {
         expect(addValues(2,3)).toBe(5);
     })
 
