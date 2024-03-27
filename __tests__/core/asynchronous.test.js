@@ -47,8 +47,7 @@ describe('To validate Asynchronous Actions', () => {
 
     const cbFunction = (status, data) => {
       try {
-        if (status === 'SUCCESS') {
-          console.log('Success Data:', data)
+        if (status === 'SUCCESS') {          
           expect(data).toEqual(userData)
           done();
         }
