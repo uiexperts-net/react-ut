@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unit testing for demo loads and displays greeting 1`] = `
+<div
+  data-testid="root"
+>
+  <h1>
+     DOM Testing
+  </h1>
+  <div>
+    Connect Status : 
+    <span
+      data-testid="connect-status"
+    >
+      Status:
+      YES
+    </span>
+  </div>
+  <button>
+    Connect
+  </button>
+</div>
+`;
