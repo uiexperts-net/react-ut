@@ -1,16 +1,52 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`unit testing for demo loads and displays greeting 1`] = `
+exports[`dom testing with react testing library validate the use of queries with screen scope 1`] = `
 <div
   data-testid="root"
 >
   <h1>
-     DOM Testing
+    DOM Testing-Dem
   </h1>
-  <div>
-    Connect Status : 
+  <div
+    role="status-container"
+  >
+    <label
+      id="connect-status"
+    >
+      Connect Status
+    </label>
     <span
-      data-testid="connect-status"
+      aria-labelledby="connect-status"
+      title="Status"
+    >
+      Status:
+      YES
+    </span>
+  </div>
+  <button>
+    Connect
+  </button>
+</div>
+`;
+
+exports[`dom testing with react testing library validate the use of queries with t scope 1`] = `
+<div
+  data-testid="root"
+>
+  <h1>
+    DOM Testing-Dem
+  </h1>
+  <div
+    role="status-container"
+  >
+    <label
+      id="connect-status"
+    >
+      Connect Status
+    </label>
+    <span
+      aria-labelledby="connect-status"
+      title="Status"
     >
       Status:
       YES

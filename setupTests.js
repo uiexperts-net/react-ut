@@ -1,8 +1,9 @@
 /**
- * setupTests.js -
+ * setupTests.js
  * Helps to setup global configurations for the test cases
  */
 
+ import '@testing-library/jest-dom'
+
 beforeAll(()=>{
-    // console.log("SetupTests :: Entering into BeforeAll for all test cases");
 })

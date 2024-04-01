@@ -43,7 +43,16 @@ const config = {
   // ],
 
   // An object that configures minimum threshold enforcement for coverage results
-  // coverageThreshold: undefined,
+  
+  coverageThreshold: {
+    global: {
+      statements: 80, // minimum percentage of statements covered
+      branches: 70,   // minimum percentage of branches covered
+      functions: 80,  // minimum percentage of functions covered
+      lines: 80,      // minimum percentage of lines covered
+    },
+  },
+  
 
   // A path to a custom dependency extractor
   // dependencyExtractor: undefined,

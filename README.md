@@ -94,14 +94,25 @@ setupFilesAfterEnv: ['./setupTests.js']
 To enable code coverage, applu below configuration in Jest config file
 ```
 collectCoverage: true,
-coverageDirectory: "coverage"
+coverageDirectory: "coverage",
+coverageThreshold: {
+    global: {
+      statements: 80, // minimum percentage of statements covered
+      branches: 70,   // minimum percentage of branches covered
+      functions: 80,  // minimum percentage of functions covered
+      lines: 80,      // minimum percentage of lines covered
+    },
+  },
 ```
 
 Run below command
 ```
 jest --coverage=true|false
 ```
+
 ***
+
+
 
 ## React Testing Library
 
@@ -138,11 +149,3 @@ Use below code to apply jest environment specic to a file and override global se
 ```
 ***
 
-# Install Cypress
-
-
-```
-npm install cypress --save-dev
-npm install --save-dev cypress @testing-library/cypress
-```
-***

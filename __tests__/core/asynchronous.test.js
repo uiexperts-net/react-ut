@@ -34,7 +34,7 @@ describe('To validate Asynchronous Actions', () => {
       })
   });
 
-  test('Validate Fetch Data using Rest API ', () => {
+  test.only('Validate Fetch Data using Rest API ', () => {
     const userData = { name: 'TestUser', contactNo: 4503430342 }
     return processUserDataWithAPI()
       .then(data => {
@@ -42,7 +42,7 @@ describe('To validate Asynchronous Actions', () => {
       })
   });
 
-  test.only('Validate callback ', (done) => {
+  test('Validate callback ', (done) => {
     const userData = { name: 'TestUser', contactNo: 4503430342 }
 
     const cbFunction = (status, data) => {
@@ -55,14 +55,11 @@ describe('To validate Asynchronous Actions', () => {
           done(status)
           console.error('Error')
           return;
-
         }
       }
       catch (error) {
         done(error)
       }
-
-
     }
 
     processUserDataWithCallback(cbFunction);
