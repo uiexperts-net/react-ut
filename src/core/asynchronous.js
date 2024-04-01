@@ -32,9 +32,7 @@ export const processUserDataWithAPI = async () => {
     return userData;
 }
 
-
-export const processUserDataWithCallback = (cbFunc) => {
-    // fetchUserWithCB(cbF)
+export const processUserDataWithCallback = (cbFunc) => {    
     setTimeout(() => {
         cbFunc('SUCCESS', { name: 'TestUser', contactNo: 4503430342 })
     }, 1000);

@@ -1,24 +1,27 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react'
+import { render, screen, within, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import '@testing-library/jest-dom'
 
 import { DOMTesting } from '../../src/components/dom';
 
-describe('unit testing for demo', () => {
+describe('dom testing with react testing library', () => {
   
-    test('loads and displays greeting', async () => {
-        // ARRANGE
-        render(<DOMTesting />)
-
-        // ACT
-        await screen.getByTestId('connect-status');
-
+    test('validate the use of queries with t scope', async () => {
+        render(<DOMTesting />)        
+        const statusElem = screen.getByTitle(/Status/);        
         // ASSERT
-        expect(screen.getByTestId('connect-status')).toHaveTextContent('Status:NO');
+        expect(statusElem).toHaveTextContent('Status:NO');
         await userEvent.click(screen.getByRole('button'))
-        expect(screen.getByTestId('connect-status')).toHaveTextContent('Status:YES');
+        expect(statusElem).toHaveTextContent('Status:YES');
         await userEvent.click(screen.getByRole('button'))
         expect(screen.getByTestId('root')).toMatchSnapshot();      
     })
+
+test('validate querying within element scope',()=>{
+    const {getByRole} = render(<DOMTesting/>);
+    const connectContainer = getByRole('status-container')
+    const statusElem = within(connectContainer).getByLabelText('Connect Status',{selector:'span'});
+    expect(statusElem).toHaveTextContent(/Status:NO/)
+})
+
 })
